@@ -51,9 +51,14 @@ var_dump($devList);
         <style>
 
             *{
-                margin: 0 auto;
+                margin: 0;
                 padding: 0;
                 box-sizing: border-box;
+            }
+
+            body {
+                background: #1E2D3B;
+                min-height: 100vh;
             }
 
             .container {
@@ -83,19 +88,35 @@ var_dump($devList);
                 text-align: center;
             }
 
+            .dev h3 {
+                margin: 20px 0;
+                color: white;
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+
+            .dev span {
+                color: grey;
+                font-size: 20px;
+            }
+
         </style>
     </head>
     <body>
         
-        <div container="container dev_container">
-            
-            <?php foreach ($devList as $dev) { ?>
-                <div class="dev">
-                    <h3><?php echo $dev->getName(), ' ', $dev->getsurname()?></h3>
-                    <span><?php echo $dev->getGrade()?></span>
-                </div>
-            <?php };?>
+        <div class="container">
+            <div class="dev_container container ">
+                
+                <?php foreach ($devList as $dev) { ?>
+                    <div class="dev">
+                        <h3><?php echo $dev->getName(), ' ', $dev->getsurname()?></h3>
+                        <span><?php echo $dev->getGrade()?></span>
+                    </div>
+                <?php };?>
 
+            </div>
+        
         </div>
+
     </body>
 </html>
